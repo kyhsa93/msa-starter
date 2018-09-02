@@ -1,0 +1,33 @@
+version: '3'
+services:
+  gateway:
+    build: ./gateway/
+    restart: always
+    ports:
+      - "5000:80"
+    env_file: .env
+    networks:
+      - msa_network
+
+  express-api:
+    build: ./express-api/
+    restart: always
+    env_file: .env
+    networks:
+      - msa_network
+
+  database:
+    image: mariadb:10.1.14
+    restart: always
+    ports:
+      - "3306:3306"
+    env_file: .env
+    volumes:
+      - ~/workspace/docker/mysql:/var/lib/mysql
+    networks:
+      - msa_network
+
+networks:
+  msa_network:
+    external:
+      name: msa_network
