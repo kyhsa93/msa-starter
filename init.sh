@@ -1,11 +1,33 @@
+#!/bin/sh
+
 git config --global credential.helper cache
+
+rm -rf express-api
 
 git clone https://github.com/kyhsa93/express-api-starter.git express-api
 
-cd express-api && npm install @babel/core @babel/cli && npm run trans && cd ..
+npm install
 
-sudo docker-compose up -d
+cp -r node_modules express-api/node_modules
 
-sudo docker images
+cd express-api && npm run trans && cd ..
 
-sudo docker ps -a
+docker network create msa_network
+if [ $? -eq 1 ];then
+  sudo docker network create msa_network
+fi
+
+docker-compose up -d --build
+if [ $? -eq 1 ];then
+  sudo docker-compose up -d --build
+fi
+
+docker images
+if [ $? -eq 1 ];then
+  sudo docker images
+fi
+
+docker ps -a
+if [ $? -eq 1 ];then
+  sudo docker ps -a
+fi

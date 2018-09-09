@@ -1,0 +1,44 @@
+{
+  "name": "msa-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "init.sh",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyhsa93/msa-starter.git"
+  },
+  "author": "kyhsa93",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyhsa93/msa-starter/issues"
+  },
+  "homepage": "https://github.com/kyhsa93/msa-starter#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/node": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-decorators": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-function-sent": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0-beta.54",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "babel-eslint": "^8.2.6",
+    "chai": "^4.1.2",
+    "eslint-plugin-mocha": "^5.0.0",
+    "istanbul": "^0.4.5",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-flowtype": "^2.46.1",
+    "eslint-plugin-import": "^2.9.0",
+    "jsdoc": "^3.5.5",
+    "jsdoc-route-plugin": "^0.1.0",
+    "mocha": "^5.0.5",
+    "nodemon": "^1.18.2"
+  },
+  "scripts": {
+    "start": "sh ./init.sh"
+  }
+}
