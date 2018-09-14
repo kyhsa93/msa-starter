@@ -10,7 +10,7 @@ npm install
 
 cp -r node_modules express-api/node_modules
 
-cd express-api && npm run trans && cd ..
+cd express-api && sh ./transpile.sh && cd ..
 
 docker network create msa_network
 if [ $? -eq 1 ];then
