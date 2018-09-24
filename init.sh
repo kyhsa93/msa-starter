@@ -12,11 +12,6 @@ cp -r node_modules express-api/node_modules
 
 cd express-api && sh ./transpile.sh && cd ..
 
-docker network create msa_network
-if [ $? -eq 1 ];then
-  sudo docker network create msa_network
-fi
-
 docker-compose up -d --build
 if [ $? -eq 1 ];then
   sudo docker-compose up -d --build

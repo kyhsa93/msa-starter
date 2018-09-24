@@ -6,15 +6,15 @@ services:
     ports:
       - "5000:80"
     env_file: .env
-    networks:
-      - msa_network
+    links:
+      - express-api
 
   express-api:
     build: ./express-api/
     restart: always
     env_file: .env
-    networks:
-      - msa_network
+    links:
+      - database
 
   database:
     image: mariadb:10.1.14
@@ -24,10 +24,3 @@ services:
     env_file: .env
     volumes:
       - ~/workspace/docker/mysql:/var/lib/mysql
-    networks:
-      - msa_network
-
-networks:
-  msa_network:
-    external:
-      name: msa_network
