@@ -1,8 +1,13 @@
 # msa start
 mas starter kit using docker
 
-## configuration
- * ENV: [.env](/.env)
+## environment
+ * production: [.env.production](/.env.production)
+ * develop: [.env.develop](/.env.develop)
+
+## compose
+ * production: [docker-compose.production.yml](/docker-compose.production.yml)
+ * develop: [docker-compose.develop.yml](/docker-compose.develop.yml)
 
 ## command and script file
 ```bash
