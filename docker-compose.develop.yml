@@ -1,0 +1,32 @@
+version: '3'
+services:
+  gateway:
+    build: ./gateway/
+    restart: always
+    ports:
+      - "5000:80"
+    env_file: .env
+    links:
+      - express-api
+      - socket-server
+
+  express-api:
+    build: ./express-api/
+    restart: always
+    env_file: .env
+    links:
+      - database
+  
+  socket-server:
+    build: ./socket-server/
+    restart: always
+    env_file: .env
+
+  database:
+    image: mariadb:10.1.14
+    restart: always
+    ports:
+      - "3306:3306"
+    env_file: .env
+    volumes:
+      - ~/workspace/docker/mysql:/var/lib/mysql

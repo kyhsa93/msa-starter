@@ -1,2 +1,7 @@
 express-api
+socket-server
 node_modules
+docker-compose.yml
+.env
+lib
+*.zip

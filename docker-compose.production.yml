@@ -8,6 +8,7 @@ services:
     env_file: .env
     links:
       - express-api
+      - socket-server
 
   express-api:
     build: ./express-api/
@@ -15,6 +16,11 @@ services:
     env_file: .env
     links:
       - database
+
+  socket-server:
+    build: ./socket-server/
+    restart: always
+    env_file: .env
 
   database:
     image: mariadb:10.1.14
