@@ -39,6 +39,7 @@
     "nodemon": "^1.18.2"
   },
   "scripts": {
-    "start": "sh ./init.sh"
+    "start": "sh ./init.sh",
+    "upload": "sh ./upload.sh"
   }
 }
